@@ -1,0 +1,129 @@
+/* This program will provide options for a user to calculate
+   square, cube, division by 2 or mulitiplication by Pi of  a
+   positive integer input by a user. */
+
+// Developer: Devere Anthony
+
+// Date: 24 February 2018
+
+#include <stdio.h>
+ 
+// Function Prototyping
+int Square(int value);
+int Cube(int value);
+double Shrink (int value);
+double Useless_Pi (int value);
+
+int main () 
+{
+  /* variable definition: */
+ 
+   int intValue, menuSelect, Results;
+   double Results_double;
+ 
+   intValue = 1;
+ 
+   // While a positive number
+ 
+while (intValue > 0)
+ 
+{  
+ 
+     printf ("Enter a positive Integer\n: ");
+ 
+     scanf("%d", &intValue);
+ 
+   //if (intValue > 0)
+ 
+   {
+ 
+     printf ("Enter 1 to calculate Square, 2 to Calculate Cube, ");
+     printf ("3 to divide by 2, or 4 for something unnecessary.\n");
+ 
+     scanf("%d", &menuSelect);
+ 
+     if (menuSelect == 1)
+ 
+     {
+ 
+       // Call the Square Function
+ 
+       Results = Square(intValue);
+ 
+       printf("Square of %d is %d\n",intValue,Results);
+ 
+     }
+ 
+     else if (menuSelect == 2)
+ 
+     {
+ 
+       // Call the Cube function
+ 
+       Results = Cube(intValue);
+ 
+       printf("Cube of %d is %d\n",intValue,Results);
+ 
+     }
+     
+     else if (menuSelect == 3)
+     {
+	// Call Shrink function
+	
+	Results_double = Shrink(intValue);
+	
+	printf("Dividing %d by 2 is %f\n", intValue, Results_double);
+     }
+     else if (menuSelect == 4)
+     {
+     	// Call Useless_Pi function 
+     	
+     	Results_double = Useless_Pi(intValue);
+     	
+     	printf("Ok you asked for it, ");
+     	printf("%d times 3.1415926535 is %f\n",intValue, Results_double);
+     }
+ 
+     else
+ 
+       printf("Invalid menu item, only 1, 2 or 3 is accepted\n");
+ 
+     }    
+ 
+   }    
+ 
+return 0;
+ 
+}
+ 
+/* function returning the Square of a number */
+ 
+int Square(int value)
+ 
+{
+ 
+   return value*value;
+ 
+}
+ 
+/* function returning the Cube of a number */
+ 
+int Cube(int value)
+ 
+{
+   return value*value*value;
+ 
+}
+
+double Shrink(int value)
+
+{
+	return value / 2.0;
+}
+
+// Multiply value by Pi to 10 decimal places
+
+double Useless_Pi (int value)
+{
+	return value * 3.1415926535;
+}
